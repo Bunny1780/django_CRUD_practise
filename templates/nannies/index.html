@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+
+<title>{% block title %}NANNies{% endblock %}</title>
+
+{% block content %}
+    <h1>index</h1>
+    <a href="../nannies/new">新增</a> <!-- 直接把路徑帶進連結裡 -->
+    <!-- <a href="{% url 'nannies:new' %}">新增</a>  -->
+    {% for nanny in nannies %}
+        <div class="card">
+            <a href="{% url 'nannies:show' nanny.id %}">{{ nanny.name }}</a>
+        </div>
+    {% endfor %}
+    <!-- app_name : 頁面名稱 -->
+    <!-- 使用 name的方式把路徑帶進來, 在 urls.py裡設的app_name所設的名稱 -->
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}寵物保母{% endblock%}</title>
+    
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <nav>
+        <ul class="flex" style="display: flex; gap: 10px;">
+            <li><a href="{% url 'root' %}">首頁</a></li>
+            <li><a href="{% url 'nannies:index' %}">保母列表</a></li>
+            <li><a href="{% url 'about' %}">關於我們</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

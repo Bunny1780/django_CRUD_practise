@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+    <h1>刪除保母</h1>
+    <form action="{% url 'nannies:show' nannies.id %}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="name">姓名</label>
+            <input type="text" id="name" class="input-field" name="name" value="{{ nannies.name }}">
+        </div>
+
+        <div>
+            <label for="gender">性別</label>
+            <input type="text" id="gender" name="gender" value="{{ nannies.gender }}">
+        </div>
+
+        <div>
+            <label for="description">我要睡覺</label>
+            <input type="text" id="description" name="description">
+        </div>
+        <input type="submit" value="更新"> 
+
+    </form>
+{% endblock %}
