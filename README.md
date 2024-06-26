@@ -1,1 +1,1 @@
-# django_CRUD_pratise
+# django_CRUD_practise
